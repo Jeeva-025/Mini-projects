@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Strategic Connect-4</h1>
+    <h2 id="winner"></h2>
+    <div id="board"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect-4 Game</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    #board {
+      display: grid;
+      grid-template-columns: repeat(7, 80px);
+      grid-template-rows: repeat(6, 80px);
+      gap: 5px;
+    }
+
+    .cell {
+      width: 80px;
+      height: 80px;
+      border: 2px solid #333;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      background-color: #fff;
+    }
+
+    .piece {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .player-1 { background-color: #ff6347; }
+    .player-2 { background-color: #4682b4; }
+  </style>
+</head>
+<body>
+  <div id="board"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const board = document.getElementById("board");
+      let currentPlayer = 1;
+      let gameBoard = Array.from({ length: 6 }, () => Array(7).fill(0));
+
+      function createCell(row, col) {
+        const cell = document.createElement("div");
+        cell.classList.add("cell");
+        cell.dataset.row = row;
+        cell.dataset.col = col;
+        cell.addEventListener("click", () => dropPiece(col));
+        return cell;
+      }
+
+      function createPiece() {
+        const piece = document.createElement("div");
+        piece.classList.add("piece", `player-${currentPlayer}`);
+        return piece;
+      }
+
+      function dropPiece(col) {
+        const row = findEmptyRow(col);
+        if (row !== -1) {
+          const piece = createPiece();
+          gameBoard[row][col] = currentPlayer;
+          board.children[row * 7 + col].appendChild(piece);
+          if (checkWin(row, col)) {
+            alert(`Player ${currentPlayer} wins!`);
+            resetGame();
+          } else {
+            currentPlayer = 3 - currentPlayer; // Switch player (1 -> 2, 2 -> 1)
+          }
+        }
+      }
+
+      function findEmptyRow(col) {
+        for (let row = 5; row >= 0; row--) {
+          if (gameBoard[row][col] === 0) {
+            return row;
+          }
+        }
+        return -1; // Column is full
+      }
+
+      function checkWin(row, col) {
+        return (
+          checkDirection(row, col, 1, 0) ||
+          checkDirection(row, col, 0, 1) ||
+          checkDirection(row, col, 1, 1) ||
+          checkDirection(row, col, 1, -1)
+        );
+      }
+
+      function checkDirection(row, col, rowInc, colInc) {
+        const player = gameBoard[row][col];
+        for (let i = -3; i <= 3; i++) {
+          const r = row + i * rowInc;
+          const c = col + i * colInc;
+          if (r < 0 || r >= 6 || c < 0 || c >= 7) continue;
+          if (
+            gameBoard[r][c] === player &&
+            gameBoard[r + rowInc][c + colInc] === player &&
+            gameBoard[r + 2 * rowInc][c + 2 * colInc] === player &&
+            gameBoard[r + 3 * rowInc][c + 3 * colInc] === player
+          ) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      function resetGame() {
+        currentPlayer = 1;
+        gameBoard = Array.from({ length: 6 }, () => Array(7).fill(0));
+        board.innerHTML = "";
+        for (let row = 0; row < 6; row++) {
+          for (let col = 0; col < 7; col++) {
+            board.appendChild(createCell(row, col));
+          }
+        }
+      }
+
+      // Initialize the game board
+      for (let row = 0; row < 6; row++) {
+        for (let col = 0; col < 7; col++) {
+          board.appendChild(createCell(row, col));
+        }
+      }
+    });
+  </script>
+</body>
+</html> -->
